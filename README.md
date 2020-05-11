@@ -1,4 +1,12 @@
-# JSSCodeShift
+# JSCodeShifters
+A collection of simple, often deliberately primitive helpers and abstractions to ease the pain of upgrading/migrating and deprecating certain aspects of your codebases. The primary focus here are React-based design systems, but fair amount of code here may work in other envs too. 
+
+### TODOs
+1. cleanup all helpers and their categories
+2. sort out a roadmap
+3. proper documentation on AST, JSCodeShift and this.
+
+### First steps
 Whatever you do, familiarise yourself with how AST works. Preferably bookmark https://astexplorer.net/ and while you're at it, set the `Transform` to `jscodeshift` and the parser to whatever understands JSX, e.g. `babel-eslint` or `flow`.
 
 In order to achieve anything, you will have to traverse a lot of nodes, so don't be afraid to abstract even small pieces of logic in helpers for future reuse.
