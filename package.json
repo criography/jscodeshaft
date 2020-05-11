@@ -1,0 +1,20 @@
+{
+  "name": "jscodeshift-lemmings",
+  "version": "0.0.1",
+  "description": "Collection of more or less primitive helpers and abstractions for JSCodeShift, build for design system migrations and upgrades.",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "jscodeshift -t ./sandbox/transformer.js sandbox --parser=babel",
+    "lint:dev": "eslint -c .eslintrc.dev --quiet --ext .js 'lib/'",
+    "lint:dev:fix": "eslint -c .eslintrc.dev --quiet --ext .jsx --ext .js --fix 'lib/'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "jscodeshift": "^0.9.0"
+  },
+  "devDependencies": {
+    "jscodeshift": "0.9.0"
+  }
+}
