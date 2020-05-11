@@ -1,6 +1,6 @@
 {
-  "name": "jscodeshift-lemmings",
-  "version": "0.0.1",
+  "name": "jscodeshifters",
+  "version": "0.1.0",
   "description": "Collection of more or less primitive helpers and abstractions for JSCodeShift, build for design system migrations and upgrades.",
   "main": "lib/index.js",
   "scripts": {
