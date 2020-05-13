@@ -3,18 +3,28 @@
   "version": "0.1.0",
   "description": "Collection of more or less primitive helpers and abstractions for JSCodeShift, build for design system migrations and upgrades.",
   "main": "lib/index.js",
+  "module": "dist/index.js",
   "scripts": {
     "start": "jscodeshift -t ./sandbox/transformer.js sandbox --parser=babel",
+    "rollup": "rollup ./lib/index.js --file ./dist/index.js --format cjs",
+    "prepublish": "npm run rollup && npm run version",
     "lint:dev": "eslint -c .eslintrc.dev --quiet --ext .js 'lib/'",
     "lint:dev:fix": "eslint -c .eslintrc.dev --quiet --ext .jsx --ext .js --fix 'lib/'"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "engines": {
+    "node": ">=11.8.0"
+  },
   "peerDependencies": {
     "jscodeshift": "^0.9.0"
   },
   "devDependencies": {
-    "jscodeshift": "0.9.0"
-  }
+    "jscodeshift": "0.9.0",
+    "rollup": "2.10.0"
+  },
+  "author": {
+    "name" : "criography",
+    "url" : "http://criography.com/"
+  },
+  "license": "MIT",
+  "keywords": ["jscodeshift", "design system", "codemod", "code migration", "refactor"]
 }

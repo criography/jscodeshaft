@@ -10,8 +10,5 @@ node_modules/
 /.idea
 
 # project
-/dist
-/sandbox/transformer.js
-/sandbox/src/*
-!/sandbox/src/.keepme
+/sandbox
 
