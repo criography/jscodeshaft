@@ -1,6 +1,10 @@
 # JSCodeShifters
 A collection of simple, often deliberately primitive helpers and abstractions to ease the pain of upgrading/migrating and deprecating certain aspects of your codebases. The primary focus here are React-based design systems, but fair amount of code here may work in other envs too. 
 
+## Prerequisites
+A parent project 
+
+
 ### TODOs
 1. cleanup all helpers and their categories
 2. sort out a roadmap
