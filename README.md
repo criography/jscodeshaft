@@ -1,21 +1,34 @@
 # JSCodeShifters
 A collection of simple, often deliberately primitive helpers and abstractions to ease the pain of upgrading/migrating and deprecating certain aspects of your codebases. The primary focus here are React-based design systems, but fair amount of code here may work in other envs too. 
 
-### TODOs
-1. cleanup all helpers and their categories
-2. sort out a roadmap
-3. proper documentation on AST, JSCodeShift and this.
 
-### First steps
+<br />
+<h3>NB: this project is at its very early stages. Use with general suspicion.</h3>
+<br />
+
+
+### Prerequisites
+A parent project including `jscodeshift@0.9.0` or newer.
+
+
+### Contributing
 Whatever you do, familiarise yourself with how AST works. Preferably bookmark https://astexplorer.net/ and while you're at it, set the `Transform` to `jscodeshift` and the parser to whatever understands JSX, e.g. `babel-eslint` or `flow`.
 
 In order to achieve anything, you will have to traverse a lot of nodes, so don't be afraid to abstract even small pieces of logic in helpers for future reuse.
  
-Also, mutation is fine. In fact, it's expected. Don't over-complicate your life trying to avoid it.
+Also, mutation is fine. In fact, it seems it's expected. Don't over-complicate your life trying to avoid it.
 
 Please, please, please be verbose in your comments (obviously within reason) – there are many not entirely obvious cases you'll have to handle, and nobody wants to guess what you had in mind 3 months from now. 
 
-### Some jscodeshift resources and code samples
+
+### TODOs
+- [ ] ensure the package is consumable as expected
+- [ ] cleanup all helpers and their categories
+- [ ] sort out a roadmap
+- [ ] add a proper documentation on AST, JSCodeShift and this.
+
+
+### Various resources
 1. https://github.com/sejoker/awesome-jscodeshift
 1. https://github.com/rajasegar/awesome-codemods
 1. https://github.com/cowchimp/awesome-ast
