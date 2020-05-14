@@ -1,7 +1,8 @@
 {
-  "name": "jscodeshifters",
+  "name": "jscodeshaft",
   "version": "0.1.0",
   "description": "Collection of more or less primitive helpers and abstractions for JSCodeShift, build for design system migrations and upgrades.",
+  "repository": "https://github.com/criography/jscodeshaft",
   "main": "lib/index.js",
   "scripts": {
     "start": "jscodeshift -t ./sandbox/transformer.js sandbox --parser=babel",
@@ -15,6 +16,7 @@
     "jscodeshift": "^0.9.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "7.9.6",
     "jscodeshift": "0.9.0"
   }
 }
