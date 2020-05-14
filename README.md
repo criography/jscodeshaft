@@ -4,21 +4,40 @@ A collection of simple, often deliberately primitive helpers and abstractions to
 > `shaft` *noun [C]*   
 > a rod forming part of a machine such as an engine, that turns in order to pass power on to the machine.  
 
+<br />
+<h3>NB: this project is at its very early stages. Use with general suspicion.</h3>
+<br />
+
+
 ### TODOs
 1. cleanup all helpers and their categories
 2. sort out a roadmap
 3. proper documentation on AST, JSCodeShift and this.
 
-### First steps
+
+### Prerequisites
+A parent project including `jscodeshift@0.9.0` or newer.
+
+
+
+### Contributing
 Whatever you do, familiarise yourself with how AST works. Preferably bookmark https://astexplorer.net/ and while you're at it, set the `Transform` to `jscodeshift` and the parser to whatever understands JSX, e.g. `babel-eslint` or `flow`.
 
 In order to achieve anything, you will have to traverse a lot of nodes, so don't be afraid to abstract even small pieces of logic in helpers for future reuse.
  
-Also, mutation is fine. In fact, it's expected. Don't over-complicate your life trying to avoid it.
+Also, mutation is fine. In fact, it seems it's expected. Don't over-complicate your life trying to avoid it.
 
 Please, please, please be verbose in your comments (obviously within reason) – there are many not entirely obvious cases you'll have to handle, and nobody wants to guess what you had in mind 3 months from now. 
 
-### Some jscodeshift resources and code samples
+
+### TODOs
+- [ ] ensure the package is consumable as expected
+- [ ] cleanup all helpers and their categories
+- [ ] sort out a roadmap
+- [ ] add a proper documentation on AST, JSCodeShift and this.
+
+
+### Various resources
 1. https://github.com/sejoker/awesome-jscodeshift
 1. https://github.com/rajasegar/awesome-codemods
 1. https://github.com/cowchimp/awesome-ast
