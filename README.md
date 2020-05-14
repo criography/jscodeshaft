@@ -1,5 +1,5 @@
 # JSCodeShaft
-A collection of simple, often deliberately primitive helpers and abstractions to ease the pain of upgrading/migrating and deprecating certain aspects of your codebases. The primary focus here are React-based design systems, but fair amount of code here may work in other envs too. 
+A collection of simple, often deliberately primitive [JSCodeShift](https://github.com/facebook/jscodeshift) helpers and abstractions to ease the pain of upgrading/migrating and deprecating certain aspects of your codebases. The primary focus here are React-based design systems, but fair amount of code here may work in other envs too. 
 
 > `shaft` *noun [C]*   
 > a rod forming part of a machine such as an engine, that turns in order to pass power on to the machine.  
