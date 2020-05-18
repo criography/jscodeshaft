@@ -1,0 +1,158 @@
+*, *:before, *:after{
+  box-sizing: border-box;
+}
+
+
+html, body{
+  margin:0;
+  padding: 0;
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+}
+
+html{
+
+}
+
+body{
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  background: #F2F2F2;
+  font: .875rem / 1.5 sans-serif;
+
+  scrollbar-width: thin;
+  scrollbar-color: #777 #2d2d2d;
+}
+
+.padded {
+  padding: 1rem;
+}
+
+
+.sidebar{
+  background: #042931;
+  overflow: hidden;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.logo{
+  font-size: 1rem;
+  color:red;
+}
+
+.navList{
+  padding: 0;
+  margin: 0;
+}
+
+.navList,
+.navList ol{
+  list-style: none;
+}
+
+.navList li{
+  white-space: nowrap;
+}
+
+.navList a{
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navList a:hover,
+.navList a:focus,
+.navList a:active{
+  color: #ADFF9D;
+}
+
+.navList > li > a {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: .375rem 0;
+}
+
+.chapters{
+  padding: 0;
+  margin: 0;
+}
+
+.chapters > li > a{
+  padding: .375rem 0;
+  font-weight: 600;
+}
+
+.pages{
+  padding-left: .75rem;
+  border-left: 1px solid #686868;
+  margin: 0 0 1rem;
+}
+
+.pages > li > a{
+  padding: .15rem 0;
+}
+
+
+
+.section{
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 80rem){
+  .section {
+    display: grid;
+    grid-template-columns : 32.5rem 1fr;
+  }
+}
+
+.section + .section > div{
+  border-top: 1px dashed #b3b3b3;
+}
+
+.section + .section > .src{
+  border-top-color: #686868;
+}
+
+@media (min-width: 80rem){
+  .srcWrapper{
+    overflow: hidden;
+    overflow-x: auto;
+  }
+
+  .srcWrapper::-webkit-scrollbar-track {
+    background: red;
+  }
+  .srcWrapper::-webkit-scrollbar-thumb {
+    background-color: yellow;
+    border-radius: 6px;
+    border: 3px solid green;
+  }
+}
+
+.dark {
+  background: #2d2d2d;
+  color: #DCDEE5;
+}
+
+
+
+main{
+  overflow: hidden;
+  overflow-y: auto;
+  height: 100%;
+}
+
+
+.src[class]{
+  margin:0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.src code{
+  padding-right: 2rem;
+  display: inline-block;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JSCodeShaft documentation</title>
+    <link rel="stylesheet" href="vendor/prism/prism.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="padded dark sidebar">
+      <h1 class="logo">JSCodeShaft</h1>
+      <nav>
+        <ol class="navList">
+          <li>
+            <a href="#">Intro</a>
+          </li>
+          <li>
+            <a href="#">JsCodeShft API</a>
+          </li>
+          <li>
+            <a href="#">JsCodeShaft API</a>
+            <ol class="chapters">
+              <li>
+                <a href="#">Attributes</a>
+
+                <ol class="pages">
+                  <li>
+                    <a href="#">getAttrs</a>
+                  </li>
+                  <li>
+                    <a href="#">createAttr</a>
+                  </li>
+                  <li>
+                    <a href="#">removeAttrs</a>
+                  </li>
+                  <li>
+                    <a href="#">addAttrs</a>
+                  </li>
+                  <li>
+                    <a href="#">renameAttr</a>
+                  </li>
+                  <li>
+                    <a href="#">setAttrValue</a>
+                  </li>
+                  <li>
+                    <a href="#">swapAttr</a>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <a href="#">Nodes</a>
+              </li>
+              <li>
+                <a href="#">ClassNames</a>
+              </li>
+              <li>
+                <a href="#">Imports</a>
+              </li>
+              <li>
+                <a href="#">Traversal</a>
+              </li>
+              <li>
+                <a href="#">Type-checking</a>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </nav>
+    </header>
+    <main>
+      <section class="section single">
+        <div class="padded">
+          <h2>
+            Page title
+          </h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cum dicta et rerum vitae! Debitis facilis inventore quibusdam repellat voluptas? Alias aspernatur assumenda debitis dignissimos eum, officia quo sunt temporibus.</p>
+        </div>
+      </section>
+
+      <section class="section dual">
+        <div class="padded">
+          <h3>getAttrs</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid delectus doloribus hic laboriosam natus. Architecto aspernatur, cupiditate deleniti dicta doloribus enim nemo nulla odit perferendis perspiciatis, temporibus ullam, velit.</p>
+        </div>
+        <div class="dark srcWrapper">
+          <pre class="src line-numbers" >
+            <code class="language-js">
+export const isCssModule = (classNameAttr) => (
+  classNameAttr.value.expression.type === 'MemberExpression'
+  && Boolean(
+    classNameAttr.value.expression.object
+    && /^styles?$/.test(classNameAttr.value.expression.object.name)
+    && classNameAttr.value.expression.property
+    && classNameAttr.value.expression.property.name
+  )
+)
+            </code>
+          </pre>
+        </div>
+      </section>
+
+
+      <section class="section dual">
+        <div class="padded left">
+          <h3>getAttrs</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid delectus doloribus hic laboriosam natus. Architecto aspernatur, cupiditate deleniti dicta doloribus enim nemo nulla odit perferendis perspiciatis, temporibus ullam, velit.</p>
+        </div>
+        <div class="padded right dark">
+          <code>
+            <pre>
+export const isCssModule = (classNameAttr) => (
+  classNameAttr.value.expression.type === 'MemberExpression'
+  && Boolean(
+    classNameAttr.value.expression.object
+    && /^styles?$/.test(classNameAttr.value.expression.object.name)
+    && classNameAttr.value.expression.property
+    && classNameAttr.value.expression.property.name
+  )
+)
+            </pre>
+          </code>
+        </div>
+      </section>
+    </main>
+
+
+    <script src="vendor/prism/prism.js"></script>
+    <script>
+      Prism.plugins.NormalizeWhitespace.setDefaults({
+        'remove-trailing': true,
+        'remove-indent': true,
+        'left-trim': true,
+        'right-trim': true,
+        'indent': 1,
+        'remove-initial-line-feed': true,
+        'tabs-to-spaces': 2,
+      });
+    </script>
+  </body>
+</html>
