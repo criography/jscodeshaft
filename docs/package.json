@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "name": "jscodeshaft-documentation",
+  "description": "JSCodeShaft documentation",
+  "repository": "https://github.com/criography/jscodeshaft",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "start": "preact watch",
+    "build": "preact build",
+    "serve": "sirv build --cors --single",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "babel-plugin-prismjs": "^2.0.1",
+    "classnames": "^2.2.6",
+    "node-sass": "^4.14.1",
+    "preact-cli": "3.0.0-rc.10",
+    "sass-loader": "^8.0.2",
+    "sirv-cli": "0.4.5"
+  },
+  "dependencies": {
+    "preact": "10.4.4",
+    "preact-markup": "^1.6.0",
+    "preact-render-to-string": "5.1.8",
+    "preact-router": "3.2.1",
+    "prismjs": "^1.20.0"
+  }
+}

@@ -1,0 +1,62 @@
+.this{
+	background: #042931;
+	overflow: hidden;
+	overflow-y: auto;
+	height: 100%;
+}
+
+.logo{
+	font-size: 1rem;
+	color:red;
+}
+
+.navList{
+	padding: 0;
+	margin: 0;
+
+	&, ol{
+		list-style: none;
+	}
+
+	li{
+		white-space: nowrap;
+	}
+
+	a{
+		color: inherit;
+		text-decoration: none;
+		display: inline-block;
+
+		:hover,
+		:focus,
+		:active{
+			color: #ADFF9D;
+		}
+	}
+
+	> li > a {
+		font-size: 1rem;
+		font-weight: 600;
+		padding: .375rem 0;
+	}
+}
+
+.chapters{
+	padding: 0;
+	margin: 0;
+
+	> li > a{
+		padding: .375rem 0;
+		font-weight: 600;
+	}
+}
+
+.pages{
+	padding-left: .75rem;
+	border-left: 1px solid #686868;
+	margin: 0 0 1rem;
+
+	> li > a{
+		padding: .15rem 0;
+	}
+}

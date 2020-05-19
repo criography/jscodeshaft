@@ -1,0 +1,47 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+body {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  background: #f2f2f2;
+  font: .875rem / 1.5 sans-serif;
+
+  scrollbar-width: thin;
+  scrollbar-color: #777 #2d2d2d;
+}
+
+
+:global .padded {
+  padding: 1rem;
+}
+
+:global .text{
+  max-width: 32.5rem
+}
+
+
+:global .dark {
+  background: #2d2d2d;
+  color: #dcdee5;
+}
+
+
+main{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: auto;
+  height: 100%;
+}
