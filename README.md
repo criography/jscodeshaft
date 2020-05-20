@@ -9,11 +9,6 @@ A collection of simple, often deliberately primitive [JSCodeShift](https://githu
 <br />
 
 
-### TODOs
-1. cleanup all helpers and their categories
-2. sort out a roadmap
-3. proper documentation on AST, JSCodeShift and this.
-
 
 ### Prerequisites
 A parent project including `jscodeshift@0.9.0` or newer.
