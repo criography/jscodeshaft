@@ -11,7 +11,7 @@ A collection of simple, often deliberately primitive [JSCodeShift](https://githu
 
 
 ### Prerequisites
-A parent project including `jscodeshift@0.9.0` or newer.
+A parent project including `jscodeshift@0.13.1` or newer.
 
 
 
