@@ -1,6 +1,6 @@
 {
   "name": "jscodeshaft",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Collection of more or less primitive helpers and abstractions for JSCodeShift, build for design system migrations and upgrades.",
   "repository": "https://github.com/criography/jscodeshaft",
   "main": "dist/index.js",
@@ -16,12 +16,12 @@
     "node": ">=11.8.0"
   },
   "peerDependencies": {
-    "jscodeshift": "^0.11.0"
+    "jscodeshift": "^0.13.1"
   },
   "devDependencies": {
-    "@babel/preset-env": "7.12.11",
-    "jscodeshift": "0.11.0",
-    "rollup": "2.38.0"
+    "@babel/preset-env": "7.16.8",
+    "jscodeshift": "0.13.1",
+    "rollup": "2.63.0"
   },
   "author": {
     "name": "criography",
