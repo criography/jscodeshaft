@@ -1,0 +1,10 @@
+{
+  "bail": 1,
+  "roots": [ "lib" ],
+  "setupFilesAfterEnv": ["jest-extended/all"],
+  "testPathIgnorePatterns": ["/(sources|snapshots)/.*\\.js"],
+  "transform": {
+    "\\.[jt]sx?$": "babel-jest"
+  },
+  "verbose": true
+}

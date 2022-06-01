@@ -1,16 +1,17 @@
 {
   "name": "jscodeshaft",
-  "version": "0.1.14",
+  "version": "0.2.1",
   "description": "Collection of more or less primitive helpers and abstractions for JSCodeShift, build for design system migrations and upgrades.",
   "repository": "https://github.com/criography/jscodeshaft",
   "main": "dist/index.js",
   "module": "lib/index.js",
   "scripts": {
     "start": "jscodeshift -t ./sandbox/transformer.js sandbox/src --parser=babel",
-    "rollup": "rollup ./lib/index.js --file ./dist/index.js --format cjs",
+    "rollup": "rollup --config",
     "prepublish": "npm run rollup && npm version",
     "lint:dev": "eslint -c .eslintrc.dev --quiet --ext .js 'lib/'",
-    "lint:dev:fix": "eslint -c .eslintrc.dev --quiet --ext .jsx --ext .js --fix 'lib/'"
+    "lint:dev:fix": "eslint -c .eslintrc.dev --quiet --ext .jsx --ext .js --fix 'lib/'",
+    "test": "jest --config .jest.config.json"
   },
   "engines": {
     "node": ">=16.15.0"
@@ -19,7 +20,15 @@
     "jscodeshift": "^0.13.1"
   },
   "devDependencies": {
-    "@babel/preset-env": "7.18.2",
+    "@babel/core": "7.18.2",
+    "@babel/preset-env": "7.16.8",
+    "@babel/preset-react": "7.17.12",
+    "@faker-js/faker": "7.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "babel-jest": "28.1.0",
+    "jest": "28.1.0",
+    "jest-extended": "^2.0.0",
+    "jest-file-snapshot": "0.5.0",
     "jscodeshift": "0.13.1",
     "minimist": "1.2.6",
     "rollup": "2.75.1"
