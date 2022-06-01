@@ -14,7 +14,7 @@ expect.extend({toMatchFile});
  * determine the correct paths, read the files and perform the matching.
  * @param   {string}  dirname
  * @returns {{
- *   runSnapshotTest: runSnapshotTest,
+ *   runSnapshotTest: function,
  *   readSource: (function(*): string),
  *   getProcessorScaffold: (function(*, *): {testWrapperNode: *, root: *, j: *})
  * }}
@@ -47,6 +47,11 @@ exports.initHelpers = (dirname) => {
         {source},
       );
 
+      // For some reason, something adds an extra line break at the
+      // end of the file. This is obviously a hack, but it doesn't
+      // affect the actual transformation. In production, teams would
+      // follow the codemod with some sort of ESLint run anyway, so
+      // these things would get polished.
       expect(output + "\n").toMatchFile(
         getPath(moduleName),
       );
