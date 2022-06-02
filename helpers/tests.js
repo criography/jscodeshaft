@@ -68,14 +68,14 @@ exports.initHelpers = (dirname) => {
       .nodes()
       .at(0);
 
-    return {j, root, testWrapperNode}
-  }
+    return {j, root, testWrapperNode};
+  };
 
 
   return {
     readSource,
     runSnapshotTest,
-    getProcessorScaffold
+    getProcessorScaffold,
   };
 };
 
@@ -106,9 +106,9 @@ exports.toAst = (processor, options, input, testOptions = {}) => {
       jscodeshift,
       stats: () => {},
     },
-    options || {}
+    options || {},
   );
-}
+};
 
 
 /**
@@ -119,7 +119,8 @@ exports.NON_NODES = [
   null,
   undefined,
   faker.datatype.uuid(),
-  Math.random(),
+  0,
+  faker.finance.amount(0.01),
   [],
   {},
   /regex/s,
@@ -136,23 +137,23 @@ exports.NON_NODES = [
  * @returns {string}
  */
 exports.printType = value => {
-  if(value instanceof Date && !isNaN(value)){
+  if (value instanceof Date && !isNaN(value)) {
     return 'Date object';
-  }else if(value instanceof RegExp){
+  } else if (value instanceof RegExp) {
     return 'RegExp';
-  }else if(typeof value === 'string'){
+  } else if (typeof value === 'string') {
     return value.length ? 'string' : 'empty string';
-  }else if(typeof value === 'number' && !Number.isNaN(value)){
-    return 'number';
-  }else if(Array.isArray(value) && value.length > 0){
+  } else if (typeof value === 'number' && !Number.isNaN(value)) {
+    return value === 0 ? 'zero' : 'truthy number';
+  } else if (Array.isArray(value) && value.length > 0) {
     return 'populated array';
-  }else if(
+  } else if (
     value !== null
     && typeof value === 'object'
     && Object.keys(value).length > 0
-  ){
-    return 'populated object'
+  ) {
+    return 'populated object';
   }
 
   return JSON.stringify(value);
-}
+};
