@@ -11,6 +11,11 @@ In some cases you need to get all direct children that are either elements, lite
 |-----------|------|---------------------|
 | `childrenNodes` | _Node[]_ | Collection of Nodes |
 
+### Returns
+| value    | description                     |
+|----------|---------------------------------|
+| `Node[]` | Collection of Nodes excluding whitespace text |
+
 ### Example
 ```jsx
 // source.js
