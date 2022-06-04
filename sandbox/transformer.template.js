@@ -1,4 +1,4 @@
-const h = require('./lib');
+const h = require('../lib');
 
 
 module.exports = (fileInfo, api) => {
