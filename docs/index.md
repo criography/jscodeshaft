@@ -6,9 +6,8 @@ While it's used in production, it's a very slow WIP, so keep that in mind if you
 
 
 ## Getting started
-1. [The process](getting-started/the-process.md)
-2. [Using this library](getting-started/using-this-library.md)
-3. [Adding your own helper](getting-started/adding-helpers.md)
+1. [Using this library](getting-started/using-this-library.md)
+1. [Adding your own helper](getting-started/adding-helpers.md)
 
 ## Exposed helpers
 1. [Attributes](helpers/attributes.md)
