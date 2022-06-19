@@ -11,7 +11,7 @@
     "prepublish": "npm run rollup && npm version",
     "lint:dev": "eslint -c .eslintrc.dev --quiet --ext .js 'lib/'",
     "lint:dev:fix": "eslint -c .eslintrc.dev --quiet --ext .jsx --ext .js --fix 'lib/'",
-    "test": "jest --config .jest.config.json"
+    "test": "jest --config .jest.config.json --watch"
   },
   "engines": {
     "node": ">=16.15.0"
