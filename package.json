@@ -14,7 +14,7 @@
     "test": "jest --config .jest.config.json --watch"
   },
   "engines": {
-    "node": ">=16.15.0"
+    "node": ">=16.10.0"
   },
   "peerDependencies": {
     "jscodeshift": "^0.13.1"
