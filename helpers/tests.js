@@ -89,7 +89,12 @@ exports.initHelpers = (dirname) => {
  * @param   {object}  testOptions
  * @returns {*}
  */
-exports.toAst = (processor, options, input, testOptions = {}) => {
+exports.toAst = (
+  processor,
+  options = {parser: 'flow'},
+  input = {source: ''},
+  testOptions = {}
+) => {
   // Handle ES6 modules using default export for the transform
   const transform = processor.default ? processor.default : processor;
 
