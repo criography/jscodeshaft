@@ -79,3 +79,98 @@ const processor = (fileInfo, api) => {
 };
 ```
 
+
+
+## createAttribute
+Creates a new attribute.
+`null`, `undefined`, `boolean`, `number` and `string` literals can be passed directly, while all other types, including template and regex literals must be passed as AST expression nodes.   
+All attribute `name`s that are not following the HTML and React requirements will be disregarded, e.g. if they start with anything but letters, contain any punctuation but dashes or end with any punctuation.   
+All `value`s that are not one of the specified primitives or are not AST expression, will be also ignored.
+If value is `true`, it will be added to the code as boolean attribute (without `={true}`).
+
+### Attributes
+| arguments | type          | description             |
+|-----------|---------------|-------------------------|
+| `j`       | _JSCodeShift_ | JSCodeShift instance    |
+
+| arguments       | type        | description |
+|-----------------|-------------|----------|
+| `name`          | _string_    | Name of the attribute to be created |
+| `value`         | _any\|Node_ | Expression node or one of the supported primitives |
+
+### Returns
+| value       | description |
+|-------------|-------------|
+| `null|Node` | Attribute node on success, `null` on failure |
+
+
+### Examples
+```js
+// codemod
+import {astToSource, isImportedFromSource} from 'jscodeshaft';
+
+const processor = (fileInfo, api) => {
+  const j = api.jscodeshift;
+
+  console.log(
+    createAttribute(j)()
+  );
+  // null
+
+  console.log(
+    createAttribute(j)('--invalidAttribute--')
+  );
+  // null
+  
+  console.log(
+    createAttribute(j)('1234')
+  );
+  // null
+
+  console.log(
+    createAttribute(j)('disabled')
+  );
+  // { 
+  //   name: { name: 'disabled', ...}, 
+  //   value: { expression: { name: 'undefined' }, ...}, 
+  //   ... 
+  // }
+  
+  console.log(
+    createAttribute(j)('id', 'banana')
+  );
+  // { 
+  //   name: { name: 'id', ...}, 
+  //   value: { value: 'banana', ...}, 
+  //   ... 
+  // }  
+  
+  console.log(
+    createAttribute(j)('id', true)
+  );
+  // { 
+  //   name: { name: 'id', ...}, 
+  //   value: null, 
+  //   ... 
+  // }
+
+  console.log(
+    createAttribute(j)('matcher', /bana.*?/i)
+  );
+  // { 
+  //   name: { name: 'matcher', ...}, 
+  //   value: null, 
+  //   ... 
+  // }
+
+  console.log(
+    createAttribute(j)('matcher', j.regExpLiteral('bana.*?', 'i'))
+  );
+  // { 
+  //   name: { name: 'matcher', ... },
+  //   value: { pattern: 'bana.*?', flags: 'i', ...},
+  //   ... 
+  // }
+  // ...
+};
+```
