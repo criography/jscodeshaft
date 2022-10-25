@@ -124,3 +124,99 @@ const processor = (fileInfo, api) => {
   return astToSource(root);
 };
 ```
+
+
+## removeNamedImports
+Removes given named exports from all import declarations that reference them.
+
+If `moduleName` or `importPath` are omitted or falsy, the corresponding matchers will treat those as a wildcard, resulting in removal of all named exports in scope. 
+
+### Attributes
+| arguments | type          | description             |
+|-----------|---------------|-------------------------|
+| `j`       | _JSCodeShift_ | JSCodeShift instance    |
+| `root`    | _Program_     | AST-ified file contents |
+
+| arguments    | type             | description         |
+|--------------|------------------|---------------------|
+| `moduleName` | _string\|RegExp_ | Module name matcher |
+| `importPath` | _string\|RegExp_ | Import path matcher |
+
+
+### Examples
+#### Default usage
+```jsx
+// source.js
+import Basket, { Banana, Pineapple, Apple } from 'fruits';
+import BookShelf, { Hobbit } from 'books';
+import { Spoon } from 'cuttlery';
+```
+```js
+// codemod
+import {astToSource, removeNamedImports} from 'jscodeshaft';
+
+const processor = (fileInfo, api) => {
+  const j = api.jscodeshift;
+  const root = j(fileInfo.source);
+
+  removeNamedImports(j, root)(/Apple$/i);
+  removeNamedImports(j, root)('Hobbit');
+  removeNamedImports(j, root)('Spoon');
+
+  return astToSource(root);
+};
+```
+```jsx
+// result
+import Basket, { Banana } from 'fruits';
+import BookShelf from 'books';
+```
+
+#### Precise matching with `importPath`
+```jsx
+// source.js
+import { Rose, Tullip } from '@lendinvest/flowery'
+import { Rose, Daisy } from '../../flowery'
+```
+```js
+// codemod
+import {astToSource, removeNamedImports} from 'jscodeshaft';
+
+const processor = (fileInfo, api) => {
+  const j = api.jscodeshift;
+  const root = j(fileInfo.source);
+
+  removeNamedImports(j, root)('Rose', '@lendinvest/flowery');
+
+  return astToSource(root);
+};
+```
+```jsx
+// result
+import { Tullip } from '@lendinvest/flowery'
+import { Rose, Daisy } from '../../flowery'
+```
+
+#### Wildcard `moduleName` matching
+```jsx
+// source.js
+import { Ford } from './cars/american';
+import Garage, { Fiat } from './cars/european';
+```
+```js
+// codemod
+import {astToSource, removeNamedImports} from 'jscodeshaft';
+
+const processor = (fileInfo, api) => {
+  const j = api.jscodeshift;
+  const root = j(fileInfo.source);
+
+  removeNamedImports(j, root)(null, /\/cars\//);
+
+  return astToSource(root);
+};
+```
+```jsx
+// result
+import Garage from './cars/european';
+```
