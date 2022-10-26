@@ -31,10 +31,14 @@ instead, override with `allOnNoMatch`.
 ### Examples
 ```jsx
 // source.js
-const StatementLink = ({href, id}) => (
-  <a href={href} id={id} download>
-    Download statement
-  </a>
+const StatementLink = ({href, id, ...details}) => (
+  <>
+    <a href={href} id={id} download>
+      Download statement
+    </a>
+    
+    <Details {...details} />
+  </>
 );
 ```
 ```js
@@ -45,7 +49,12 @@ const processor = (fileInfo, api) => {
   const root = api.jscodeshift(fileInfo.source);
 
   const firstLinkElement = root
-    .findJSXElements('WithProps')
+    .findJSXElements('a')
+    .nodes()
+    .at(0);
+  
+  const detailsElement = root
+    .findJSXElements('Details')
     .nodes()
     .at(0);
   
@@ -71,6 +80,17 @@ const processor = (fileInfo, api) => {
   const mismatchedAttributesWithFallback = getAttributes(firstLinkElement, {
     wantedAttributes: ['onClick', 'className'],
     allOnNoMatch: true
+  });
+  
+  // collection of 1 attribute node representing spread properties.
+  // NB: it's different in structure to a regular attribute, so 
+  // default attribute helpers may not work with it.  
+  const spreadAttribute = getAttributes(detailsElement);  
+  
+  // no match: even though `text` might be included in spread attributes,
+  // the codemod has no access to that information.
+  const mismstchedAttributewithSpread = getAttributes(detailsElement, {
+    wantedAttributes: 'text',
   });
   
   // process your file here
