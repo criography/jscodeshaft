@@ -23,6 +23,6 @@ fi
 
 echo "PACKAGES_DIRECTORY:$PACKAGES_DIRECTORY"
 
-mv "$PACKAGES_DIRECTORY/ast-types" "$PACKAGES_DIRECTORY/ast-types.bak"
+rf -rf "$PACKAGES_DIRECTORY/ast-types.bak"
 cp -a "$PACKAGES_DIRECTORY/@gkz/ast-types" "$PACKAGES_DIRECTORY/ast-types"
 
