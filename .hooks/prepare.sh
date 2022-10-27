@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "=============POSTINSTALL============"
+echo "=============PREPARE============"
 echo "dirname:$(dirname "$0")"
 echo "pwd:$(pwd)"
 

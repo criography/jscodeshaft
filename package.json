@@ -1,6 +1,6 @@
 {
   "name": "jscodeshaft",
-  "version": "0.6.0-beta.4",
+  "version": "0.6.0-beta.5",
   "description": "Collection of more or less primitive helpers and abstractions for JSCodeShift, build for design system migrations and upgrades.",
   "repository": "https://github.com/criography/jscodeshaft",
   "main": "dist/index.js",
@@ -12,7 +12,8 @@
     "lint:dev": "eslint -c .eslintrc.dev --quiet --ext .js 'lib/'",
     "lint:dev:fix": "eslint -c .eslintrc.dev --quiet --ext .jsx --ext .js --fix 'lib/'",
     "test": "jest --config .jest.config.json --watch",
-    "postinstall": ". ./.hooks/postinstall.sh"
+    "postinstall": ". ./.hooks/postinstall.sh",
+    "prepare": ". ./.hooks/prepare.sh"
   },
   "engines": {
     "node": ">=16.10.0"
