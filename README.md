@@ -14,7 +14,7 @@ A collection of simple, often deliberately primitive [JSCodeShift](https://githu
 A parent project including `jscodeshift@0.13.1` or newer.
 
 ### Gotchas
-1. `ast-types` is currently out of date and [trips up on Class-based react components](https://github.com/benjamn/ast-types/issues/728). As a temporary workaround [@gkz/ast-types](https://www.npmjs.com/package/@gkz/ast-types) package is used instead and swapped upon postinstall. 
+1. `ast-types` is currently out of date and [trips up on Class-based react components](https://github.com/benjamn/ast-types/issues/728). As a temporary workaround [@gkz/ast-types](https://www.npmjs.com/package/@gkz/ast-types) package is used instead and swapped upon post-install. 
 
 ### Contributing
 Whatever you do, familiarise yourself with how AST works. Preferably bookmark https://astexplorer.net/ and while you're at it, set the `Transform` to `jscodeshift` and the parser to whatever understands JSX, e.g. `babel-eslint` or `flow`.
